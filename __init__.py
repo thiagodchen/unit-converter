@@ -37,6 +37,7 @@ class UnitConverterSkill(MycroftSkill):
     #   'Greetings planet earth'
     @intent_handler(IntentBuilder("").require("launch"))
     def handle_launch_intent(self, message):
+        print(message)
         # In this case, respond by simply speaking a canned response.
         # Mycroft will randomly speak one of the lines from the file
         #    dialogs/en-us/hello.world.dialog
@@ -53,6 +54,7 @@ class UnitConverterSkill(MycroftSkill):
     # convert core
     @intent_handler(IntentBuilder("ConvertUnitIntent").require("convert").require("convertunits").require("Value").require("InitUnit").require("FinalUnit"))
     def handle_convert(self, message):
+        print(message)
         value = message.data["Value"]
         print(value)
         initUnit = message.data["InitUnit"]
