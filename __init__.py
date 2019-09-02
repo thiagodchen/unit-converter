@@ -24,6 +24,9 @@ class UnitConverterSkill(MycroftSkill):
         # Initialize working variables used within the skill.
         self.count = 0
 
+    # def initialize(self):
+    #     self.register_intent_file()
+
     # The "handle_xxxx_intent" function is triggered by Mycroft when the
     # skill's intent is matched.  The intent is defined by the IntentBuilder()
     # pieces, and is triggered when the user's utterance matches the pattern
@@ -52,10 +55,9 @@ class UnitConverterSkill(MycroftSkill):
         self.speak_dialog("count.is.now", data={"count": self.count})
 
     # convert core
-    @intent_handler(IntentBuilder("ConvertUnitIntent").require("convert"))
+    @intent_file_handler('convert.intent')
     def handle_convert(self, message):
-        print(message)
-        value = message.data["Value"]
+        value = message.data.get("Value")
         # initUnit = message.data["InitUnit"]
         # finalUnit = message.data["FinalUnit"]
 
