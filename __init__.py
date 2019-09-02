@@ -50,6 +50,18 @@ class UnitConverterSkill(MycroftSkill):
             self.count -= 1
         self.speak_dialog("count.is.now", data={"count": self.count})
 
+    # convert core
+    @intent_handler(IntentBuilder("ConvertUnitIntent").require("convertunits"))
+    def handle_convert(self, message):
+        value = message.data["Value"]
+        initUnit = message.data["InitUnit"]
+        finalUnit = message.data["FinalUnit"]
+
+        value = value*100
+
+        self.speak_dialog("the conversion is " + str(value))
+
+
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
     # is extremely simple, there is no need to override it.  If you DO
