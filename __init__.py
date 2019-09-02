@@ -62,4 +62,4 @@ class UnitConverterSkill(MycroftSkill):
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
 def create_skill():
-    return TemplateSkill()
+    return UnitConverterSkill()
