@@ -21,9 +21,6 @@ class UnitConverterSkill(MycroftSkill):
     def __init__(self):
         super(UnitConverterSkill, self).__init__(name="UnitConverterSkill")
 
-        # Initialize working variables used within the skill.
-        self.count = 0
-
     # def initialize(self):
     #     self.register_intent_file()
 
@@ -46,28 +43,20 @@ class UnitConverterSkill(MycroftSkill):
         #    dialogs/en-us/hello.world.dialog
         self.speak_dialog("Hi welcome to unit converter skill")
 
-    @intent_handler(IntentBuilder("").require("Count").require("Dir"))
-    def handle_count_intent(self, message):
-        if message.data["Dir"] == "up":
-            self.count += 1
-        else:  # assume "down"
-            self.count -= 1
-        self.speak_dialog("count.is.now", data={"count": self.count})
-
     # convert core
-    @intent_file_handler('convert.intent')
-    def handle_convert(self, message):
-        value = message.data.get("Value")
-        # initUnit = message.data["InitUnit"]
-        # finalUnit = message.data["FinalUnit"]
-
-        # print(initUnit)
-
-        print(value)
-
-        value = value*100
-
-        self.speak_dialog("the conversion is " + str(value))
+    # @intent_file_handler('convert.intent')
+    # def handle_convert(self, message):
+    #     value = message.data.get("Value")
+    #     # initUnit = message.data["InitUnit"]
+    #     # finalUnit = message.data["FinalUnit"]
+    #
+    #     # print(initUnit)
+    #
+    #     print(value)
+    #
+    #     value = value*100
+    #
+    #     self.speak_dialog("the conversion is " + str(value))
 
 
     # The "stop" method defines what Mycroft does when told to stop during
