@@ -54,8 +54,13 @@ class UnitConverterSkill(MycroftSkill):
     @intent_handler(IntentBuilder("ConvertUnitIntent").require("convertunits").require("Value").require("InitUnit").require("FinalUnit"))
     def handle_convert(self, message):
         value = message.data["Value"]
+        print(value)
         initUnit = message.data["InitUnit"]
         finalUnit = message.data["FinalUnit"]
+
+        print(initUnit)
+
+        print(value)
 
         value = value*100
 
