@@ -24,39 +24,21 @@ class UnitConverterSkill(MycroftSkill):
     # def initialize(self):
     #     self.register_intent_file()
 
-    # The "handle_xxxx_intent" function is triggered by Mycroft when the
-    # skill's intent is matched.  The intent is defined by the IntentBuilder()
-    # pieces, and is triggered when the user's utterance matches the pattern
-    # defined by the keywords.  In this case, the match occurs when one word
-    # is found from each of the files:
-    #    vocab/en-us/Hello.voc
-    #    vocab/en-us/World.voc
-    # In this example that means it would match on utterances like:
-    #   'Hello world'
-    #   'Howdy you great big world'
-    #   'Greetings planet earth'
-    @intent_handler(IntentBuilder("").require("launch"))
-    def handle_launch_intent(self, message):
-        print(message)
-        # In this case, respond by simply speaking a canned response.
-        # Mycroft will randomly speak one of the lines from the file
-        #    dialogs/en-us/hello.world.dialog
-        self.speak_dialog("Hi welcome to unit converter skill")
 
-    # convert core
-    # @intent_file_handler('convert.intent')
-    # def handle_convert(self, message):
-    #     value = message.data.get("Value")
-    #     # initUnit = message.data["InitUnit"]
-    #     # finalUnit = message.data["FinalUnit"]
-    #
-    #     # print(initUnit)
-    #
-    #     print(value)
-    #
-    #     value = value*100
-    #
-    #     self.speak_dialog("the conversion is " + str(value))
+    # @intent_handler(IntentBuilder("").require("launch"))
+    # def handle_launch_intent(self, message):
+    #     print(message)
+    #     self.speak_dialog("Hi welcome to unit converter skill")
+
+    @intent_file_handler('convert.intent')
+    def handle_convert(self, message):
+        # value = message.data.get("Value")
+        # initUnit = message.data["InitUnit"]
+        # finalUnit = message.data["FinalUnit"]
+
+        # print(initUnit)
+
+        self.speak_dialog("the conversion is " + str(value))
 
 
     # The "stop" method defines what Mycroft does when told to stop during
