@@ -52,15 +52,14 @@ class UnitConverterSkill(MycroftSkill):
         self.speak_dialog("count.is.now", data={"count": self.count})
 
     # convert core
-    @intent_handler(IntentBuilder("ConvertUnitIntent").require("convert").require("convertunits").require("Value").require("InitUnit").require("FinalUnit"))
+    @intent_handler(IntentBuilder("ConvertUnitIntent").require("convert").require("Value"))
     def handle_convert(self, message):
         print(message)
         value = message.data["Value"]
-        print(value)
-        initUnit = message.data["InitUnit"]
-        finalUnit = message.data["FinalUnit"]
+        # initUnit = message.data["InitUnit"]
+        # finalUnit = message.data["FinalUnit"]
 
-        print(initUnit)
+        # print(initUnit)
 
         print(value)
 

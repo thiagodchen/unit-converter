@@ -1,4 +1,2 @@
-I want to convert (?P<Value>.*) (?P<InitUnit>.*) to (?P<FinalUnit>.*)
-convert (?P<Value>.*) (?P<InitUnit>.*) to (?P<FinalUnit>.*)
-I want to convert (?P<Value>.*) (?P<InitUnit>.*) to (?P<FinalUnit>.*) please
-convert (?P<Value>.*) (?P<InitUnit>.*) to (?P<FinalUnit>.*) please
+I want to convert (?P<Value>.*)
+convert (?P<Value>.*)
