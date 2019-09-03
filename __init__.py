@@ -8,7 +8,7 @@ class UnitConverterSkill(MycroftSkill):
         super(UnitConverterSkill, self).__init__(name="UnitConverterSkill")
 
     def initialize(self):
-        self.register_intent_file('convert', self.handle_convert_intent)
+        self.register_intent_file('convert.intent', self.handle_convert_intent)
 
     @intent_handler(IntentBuilder("LaunchIntent").require("launch"))
     def handle_launch_intent(self, message):
