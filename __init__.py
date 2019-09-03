@@ -10,7 +10,7 @@ class UnitConverterSkill(MycroftSkill):
     @intent_handler(IntentBuilder("LaunchIntent").require("launch"))
     def handle_launch_intent(self, message):
         print(message)
-        self.speak_dialog("Hi welcome to unit converter skill")
+        self.speak("Hi welcome to unit converter skill")
 
 def create_skill():
     return UnitConverterSkill()
